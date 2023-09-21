@@ -1,0 +1,34 @@
+server:
+  address: localhost
+  port: 
+    grpc: 2200
+    http: 2201
+  logger:
+    format: json
+database:
+  sql:
+    host: localhost
+    port: 3306
+    schema: authentication
+    username: root
+    password: <YOUR_PASSWORD>
+    autoMigrate: true
+cache:
+  redis:
+    host: localhost
+    port: 6379
+    db: 0
+    password: 
+app:
+  encryption:
+    cost: 10
+    mp: <MASTER_PASSWORD>
+  jwt:
+    signingKey: jMbtArFE3qRHnOe7X6CD
+    iss: example.com
+    exp: 15m # h:hour/m:minute/s:second/d:day
+  auth:
+    excludedMethods: 
+    - Login
+    - Register
+    - IsUserExist
