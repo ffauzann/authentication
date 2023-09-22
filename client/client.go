@@ -2,8 +2,9 @@ package client
 
 import (
 	"context"
-	"hangoutin/authentication/proto"
 	"io"
+
+	"github.com/ffauzann/authentication/proto"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

@@ -3,10 +3,10 @@ package grpc
 import (
 	"context"
 
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/util"
-	"hangoutin/authentication/proto"
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/util"
+	"github.com/ffauzann/authentication/proto"
 )
 
 func validateLogin(req *proto.LoginRequest) error {

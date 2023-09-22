@@ -1,8 +1,9 @@
-module hangoutin/authentication
+module github.com/ffauzann/authentication
 
 go 1.19
 
 require (
+	github.com/ffauzann/common v0.0.0-20230922151518-eb4167780ef0
 	github.com/go-redis/redis/v9 v9.0.0-rc.2
 	github.com/golang-jwt/jwt/v4 v4.4.3
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
@@ -52,7 +53,4 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	hangoutin/common v0.0.0-00010101000000-000000000000
 )
-
-replace hangoutin/common => ../common

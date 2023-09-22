@@ -2,7 +2,8 @@ package model
 
 import (
 	"encoding/json"
-	"hangoutin/authentication/internal/constant"
+
+	"github.com/ffauzann/authentication/internal/constant"
 
 	"github.com/golang-jwt/jwt/v4"
 )

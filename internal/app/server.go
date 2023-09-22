@@ -7,20 +7,18 @@ import (
 	"os"
 	"os/signal"
 
-	// "hangoutin/common/interceptor"
-
-	authInterceptor "hangoutin/common/interceptor/authentication"
-	ctxTagsInterceptor "hangoutin/common/interceptor/ctxtags"
-	logInterceptor "hangoutin/common/interceptor/logging"
-	recoveryInterceptor "hangoutin/common/interceptor/recovery"
+	authInterceptor "github.com/ffauzann/common/interceptor/authentication"
+	ctxTagsInterceptor "github.com/ffauzann/common/interceptor/ctxtags"
+	logInterceptor "github.com/ffauzann/common/interceptor/logging"
+	recoveryInterceptor "github.com/ffauzann/common/interceptor/recovery"
 
 	// grpc_recovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
 	grpc_ctxtags "github.com/grpc-ecosystem/go-grpc-middleware/tags"
 
-	"hangoutin/authentication/internal/constant"
-	delivery "hangoutin/authentication/internal/delivery/grpc"
-	"hangoutin/authentication/internal/repository"
-	"hangoutin/authentication/internal/service"
+	"github.com/ffauzann/authentication/internal/constant"
+	delivery "github.com/ffauzann/authentication/internal/delivery/grpc"
+	"github.com/ffauzann/authentication/internal/repository"
+	"github.com/ffauzann/authentication/internal/service"
 
 	"google.golang.org/grpc"
 )

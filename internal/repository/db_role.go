@@ -3,8 +3,9 @@ package repository
 import (
 	"context"
 	"fmt"
-	"hangoutin/authentication/internal/util"
 	"strings"
+
+	"github.com/ffauzann/authentication/internal/util"
 )
 
 func (r *dbRepository) BatchAssignRoles(ctx context.Context, userId uint64, roleIds []uint8) (err error) {

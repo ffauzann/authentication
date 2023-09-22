@@ -4,11 +4,13 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/common/logger"
 	"regexp"
 	"testing"
+
+	"github.com/ffauzann/common/logger"
+
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
 
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/jmoiron/sqlx"

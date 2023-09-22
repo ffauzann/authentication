@@ -1,6 +1,6 @@
 # Repository
-mockery --name=DBRepository --dir ./repository --output ./mocks/repository
-mockery --name=RedisRepository --dir ./repository --output ./mocks/repository
+mockery --disable-version-string --name=DBRepository --dir ./internal/repository --output ./mocks/internal/repository
+mockery --disable-version-string --name=RedisRepository --dir ./internal/repository --output ./mocks/internal/repository
 
 # Service
-mockery --name=Service --dir ./service --output ./mocks/service
+mockery --disable-version-string --name=Service --dir ./internal/service --output ./mocks/internal/service

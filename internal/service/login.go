@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/util"
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/util"
 
 	"github.com/golang-jwt/jwt/v4"
 	"golang.org/x/crypto/bcrypt"

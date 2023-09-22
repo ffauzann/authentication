@@ -1,8 +1,9 @@
 package app
 
 import (
-	"hangoutin/authentication/internal/util"
 	"log"
+
+	"github.com/ffauzann/authentication/internal/util"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

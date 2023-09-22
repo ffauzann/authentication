@@ -1,8 +1,8 @@
 package grpc
 
 import (
-	"hangoutin/authentication/internal/service"
-	"hangoutin/authentication/proto"
+	"github.com/ffauzann/authentication/internal/service"
+	"github.com/ffauzann/authentication/proto"
 
 	"go.uber.org/zap"
 	"google.golang.org/grpc"

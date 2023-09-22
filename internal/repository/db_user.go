@@ -4,10 +4,11 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/util"
 	"strings"
+
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/util"
 )
 
 func (r *dbRepository) CreateUser(ctx context.Context, user *model.User) (err error) {

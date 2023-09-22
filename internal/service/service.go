@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/repository"
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/repository"
 
 	"go.uber.org/zap"
 )

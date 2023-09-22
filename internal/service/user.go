@@ -3,12 +3,14 @@ package service
 import (
 	"context"
 	"fmt"
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/util"
-	commonUtil "hangoutin/common/util"
 	"strings"
 	"sync"
+
+	commonUtil "github.com/ffauzann/common/util"
+
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/util"
 )
 
 func (s *service) IsUserExist(ctx context.Context, req *model.IsUserExistRequest) (res *model.IsUserExistResponse, err error) {

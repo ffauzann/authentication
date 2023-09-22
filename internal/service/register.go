@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/util"
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/util"
 )
 
 func (s *service) Register(ctx context.Context, req *model.RegisterRequest) (res *model.RegisterResponse, err error) {

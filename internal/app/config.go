@@ -1,8 +1,9 @@
 package app
 
 import (
-	"hangoutin/authentication/internal/model"
 	"log"
+
+	"github.com/ffauzann/authentication/internal/model"
 
 	"github.com/spf13/viper"
 )

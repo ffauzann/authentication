@@ -3,8 +3,9 @@ package repository
 import (
 	"context"
 	"fmt"
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
+
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
 )
 
 func (r *redisRepository) RegisterUserDevice(ctx context.Context, deviceId string, token *model.Token) (err error) {

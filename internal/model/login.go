@@ -1,8 +1,9 @@
 package model
 
 import (
-	"hangoutin/authentication/internal/constant"
 	"time"
+
+	"github.com/ffauzann/authentication/internal/constant"
 )
 
 type LoginRequest struct {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"hangoutin/authentication/internal/app"
+	"github.com/ffauzann/authentication/internal/app"
 )
 
 var cfg app.Config

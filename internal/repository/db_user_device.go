@@ -2,8 +2,9 @@ package repository
 
 import (
 	"context"
-	"hangoutin/authentication/internal/model"
-	"hangoutin/authentication/internal/util"
+
+	"github.com/ffauzann/authentication/internal/model"
+	"github.com/ffauzann/authentication/internal/util"
 )
 
 func (r *dbRepository) RegisterUserDevice(ctx context.Context, ud *model.UserDevice) (err error) {

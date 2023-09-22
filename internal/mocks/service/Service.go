@@ -4,7 +4,7 @@ package mocks
 
 import (
 	context "context"
-	proto "hangoutin/authentication/proto"
+	proto "github.com/ffauzann/authentication/proto"
 
 	mock "github.com/stretchr/testify/mock"
 )

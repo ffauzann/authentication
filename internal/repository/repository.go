@@ -2,8 +2,9 @@ package repository
 
 import (
 	"context"
-	"hangoutin/authentication/internal/constant"
-	"hangoutin/authentication/internal/model"
+
+	"github.com/ffauzann/authentication/internal/constant"
+	"github.com/ffauzann/authentication/internal/model"
 
 	"github.com/go-redis/redis/v9"
 	"github.com/jmoiron/sqlx"
