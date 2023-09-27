@@ -1,5 +1,6 @@
 server:
-  address: localhost
+  address: 0.0.0.0 # To run in host/k8s env
+  # address: go-authentication # To run with docker
   port: 
     grpc: 2200
     http: 2201
@@ -7,7 +8,9 @@ server:
     format: json
 database:
   sql:
-    host: localhost
+    host: localhost # To run in host machine
+    # host: sql # To run within docker env
+    # host: 10.100.168.1 # To run within k8s env
     port: 3306
     schema: authentication
     username: root
@@ -15,7 +18,9 @@ database:
     autoMigrate: true
 cache:
   redis:
-    host: localhost
+    host: localhost # To run in host machine
+    # host: redis # To run within docker env
+    # host: 10.100.168.2 # To run within k8s env
     port: 6379
     db: 0
     password: 
