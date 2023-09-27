@@ -28,6 +28,7 @@ func (s *srv) Login(ctx context.Context, req *proto.LoginRequest) (res *proto.Lo
 	case proto.LoginMethod_METHOD_RECOVERY:
 		method = constant.LoginMethodRecovery
 	default:
+		err = constant.ErrInvalidMethod
 		return
 	}
 

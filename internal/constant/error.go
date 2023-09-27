@@ -14,6 +14,7 @@ var (
 	ErrInternal = errors.New("Internal error")
 
 	// Specific errors
+	ErrInvalidMethod           = errors.New("Invalid method")
 	ErrInvalidUsernamePassword = errors.New("Invalid username/password")
 	ErrPasswordIsTooWeak       = errors.New("Password is too weak")
 	ErrMalformedEmail          = errors.New("Malformed email")
@@ -26,6 +27,7 @@ var (
 var (
 	MapGRPCErrCodes = map[error]codes.Code{
 		// For HTTP mapping: https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+		ErrInvalidMethod:           codes.InvalidArgument,
 		ErrInvalidUsernamePassword: codes.InvalidArgument,
 		ErrMalformedEmail:          codes.InvalidArgument,
 		ErrInvalidUserIdType:       codes.InvalidArgument,
