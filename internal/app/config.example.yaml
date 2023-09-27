@@ -1,0 +1,39 @@
+server:
+  address: 0.0.0.0 # To run in host/k8s env
+  # address: go-authentication # To run with docker
+  port: 
+    grpc: 2200
+    http: 2201
+  logger:
+    format: json
+database:
+  sql:
+    host: localhost # To run in host machine
+    # host: sql # To run within docker env
+    # host: 10.100.168.1 # To run within k8s env
+    port: 3306
+    schema: authentication
+    username: root
+    password: <YOUR_PASSWORD>
+    autoMigrate: true
+cache:
+  redis:
+    host: localhost # To run in host machine
+    # host: redis # To run within docker env
+    # host: 10.100.168.2 # To run within k8s env
+    port: 6379
+    db: 0
+    password: 
+app:
+  encryption:
+    cost: 10
+    mp: <MASTER_PASSWORD>
+  jwt:
+    signingKey: jMbtArFE3qRHnOe7X6CD
+    iss: example.com
+    exp: 15m # h:hour/m:minute/s:second/d:day
+  auth:
+    excludedMethods: 
+    - Login
+    - Register
+    - IsUserExist

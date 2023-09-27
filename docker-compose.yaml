@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  go-authentication:
+    build: 
+      context: .
+    restart: on-failure
+    ports:
+      - 2200:2200 
+      - 2201:2201
+    depends_on:
+      sql:
+        condition: service_healthy
+
+  sql:
+    image: mysql:8.1.0
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_here
+      MYSQL_DATABASE: authentication
+      MYSQL_USER: svc_authentication
+      MYSQL_PASSWORD: some_password
+    healthcheck: # https://docs.docker.com/engine/reference/builder/#healthcheck
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7.2.1
+    ports:
+      - 6379:6379

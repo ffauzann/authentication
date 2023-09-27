@@ -1,0 +1,68 @@
+syntax = "proto3";
+package authentication;
+option go_package = "../proto";
+
+message IsUserExistRequest {
+    optional string email = 1;
+    optional string phone_number = 2;
+    optional string username = 3;
+}
+
+message IsUserExistResponse {
+    bool is_exist = 1;
+    repeated string reasons = 2;
+}
+
+enum LoginMethod {
+    METHOD_UNSPECIFIED = 0;
+    METHOD_LOGIN = 1;
+    METHOD_RECOVERY = 2;
+}
+
+message LoginRequest {
+    // user_id can be filled by email, phone number, or username
+    string user_id = 1;
+    string password = 2;
+    LoginMethod method = 3;
+    message DeviceInfo {
+        string id = 1;
+        optional string name = 2;
+        optional string model = 3;
+        message OSInfo {
+            string name = 1;
+            string version = 2;
+        }
+        optional OSInfo os_info = 4;
+    }
+    DeviceInfo device_info = 4;
+}
+
+message LoginResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+enum RegisterStatusCode {
+    RSC_UNSPECIFIED = 0;
+    RSC_SUCCEED = 1;
+    RSC_FAILED = 2;
+}
+
+message RegisterRequest {
+    string name = 1;
+    optional string username = 2;
+    string email = 3;
+    optional string phone_number = 4;
+    string password = 5;
+}
+
+message RegisterResponse {
+    RegisterStatusCode code = 1;
+    repeated string reasons = 2;
+}
+
+service AuthService {
+    rpc IsUserExist(IsUserExistRequest) returns (IsUserExistResponse) {}
+    rpc Login(LoginRequest) returns (LoginResponse) {}
+    rpc Register(RegisterRequest) returns (RegisterResponse) {}
+}
