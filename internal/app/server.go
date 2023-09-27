@@ -20,6 +20,7 @@ import (
 	"github.com/ffauzann/authentication/internal/repository"
 	"github.com/ffauzann/authentication/internal/service"
 
+	"github.com/labstack/echo/v4"
 	"google.golang.org/grpc"
 )
 
@@ -35,7 +36,8 @@ type Port struct {
 }
 
 func (c *Config) StartServer() {
-	c.startGRPCServer()
+	go c.startGRPCServer()
+	c.startHTTPServer()
 }
 
 func (c *Config) startGRPCServer() {
@@ -81,6 +83,22 @@ func (c *Config) startGRPCServer() {
 	}
 
 	go gracefullyStop(grpcServer)
+}
+
+func (c *Config) startHTTPServer() {
+	e := echo.New()
+
+	e.GET("/health", func(c echo.Context) error {
+		return c.String(200, "healthy upstream")
+	})
+
+	e.GET("/readiness", func(c echo.Context) error {
+		return c.String(200, "OK")
+	})
+
+	addr := fmt.Sprintf("%s:%d", c.Server.Address, c.Server.Port.HTTP)
+	e.Logger.Fatal(e.Start(addr))
+	fmt.Printf("http started on %s\n", addr)
 }
 
 func gracefullyStop(grpcServer *grpc.Server) {
